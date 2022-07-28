@@ -15,6 +15,13 @@ pipeline {
                 sh 'mvn package'
             }
         }
+        stage ('Deploying to tomcate server') {
+            steps {
+                sh 'cp /home/ubuntu/.jenkins/workspace/First-pipelinejob/target /opt/tomcat9/webapps/'
+            }
+        }
+            
+        
         
     }
 }
