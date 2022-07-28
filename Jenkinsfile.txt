@@ -17,7 +17,7 @@ pipeline {
         }
         stage ('Deploying to tomcate server') {
             steps {
-                sh 'cp /home/ubuntu/.jenkins/workspace/First-pipelinejob/target /opt/tomcat9/webapps/'
+                sh 'cp /home/ubuntu/.jenkins/workspace/First-pipelinejob/target/sample_maven_webapps_project.war /opt/tomcat9/webapps/'
             }
         }
             
