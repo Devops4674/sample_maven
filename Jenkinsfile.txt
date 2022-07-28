@@ -1,10 +1,20 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven'
+    }
+
     stages {
         stage ('checkout from SCM(Git)') {
             steps {
                 git credentialsId: 'git-hub', url: 'https://github.com/Devops4674/sample_maven'
+                }
+        } 
+        stage ('genarating artifact') {
+            steps {
+                sh 'mvn package'
             }
         }
+        
     }
 }
